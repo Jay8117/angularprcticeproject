@@ -1,0 +1,53 @@
+<div class="container">
+    <h1 style="text-align: center; color: rgb(9, 59, 103);">Pipes and Custome Pipes</h1>
+
+    <div class="item">
+        <h4>Date Pipe</h4>
+        <h5>Todays Date is :- {{today | date:"dd/MM/yyy"}}</h5>
+        <h5>Todays Date is :- {{today | date:"short"}}</h5>
+        <h5>Todays Date is :- {{today | date:"fullDate"}}</h5>
+    </div>
+
+    <div class="item">
+        <h4>Uppercase/Lowercase/Titlecase - Pipe</h4>
+        <h5>{{ 'angular uppercase pipes' | uppercase }}</h5>
+        <h5>{{ 'ANGULAR LOWERCASE PIPES' | lowercase }}</h5>
+        <h5>{{ 'angular titlecase pipes' | titlecase }}</h5>
+    </div>
+
+    <div class="item">
+        <h4>Currency Pipe</h4>
+        <h5>Indian Rupee- {{ 2500 | currency:'INR' }}</h5>
+        <h5>US Dollar- {{ 2500 | currency:'USD' }}</h5>
+        <h5>Euro- {{ 2500 | currency:'EUR' }}</h5>
+        <h5>British Pound- {{ 2500 | currency:'GBP' }}</h5>
+        <h5>Japanese Yen- {{ 2500 | currency:'JPY' }}</h5>
+    </div>
+    <div class="item">
+        <h4>Decimal Pipe</h4>
+        <h5>{{ 34.14159 | number:'1.2-2' }}  <!-- 1 integer, 2-2 decimals --></h5>
+        <h4>Percentage Pipe</h4>
+        <h5>{{ 0.25 | percent }}  <!-- 25% --> </h5>
+        <h4>Slice Pipe</h4>
+        <h5>{{ [1,2,3,4,5] | slice:1:4 }}  <!-- [2,3,4] --></h5>
+    </div>
+    
+    <div class="item">
+        <h4>Custome Pipe</h4>
+        <h6>For Masking Characters - E-com, Banking app, Emp management system</h6>
+        <ul *ngFor="let i of empData">
+            <li>{{i.name}}</li>
+            <li>{{i.age}}</li>
+            <li>{{i.email | user:2}}</li>
+            <li>{{i.phone | user}}</li>
+        </ul>
+
+        <h6>Currency pipe</h6>
+        <ul>
+            <li>Rupees to Doller -{{ 100 | curency:90}}</li>
+            <li>Rupees to Euro -{{ 100 | curency:180 }}</li>
+            <li>Rupees to Pound -{{ 100 | curency:150 }}</li>
+            <li>Rupees to Yan -{{ 100 | curency:140 }}</li>
+        </ul>
+    </div>
+</div>

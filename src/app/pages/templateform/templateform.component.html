@@ -1,0 +1,37 @@
+
+<div class="container m-5">
+    <h1 style="text-align: center;"> Template Driven Forms</h1>
+    <form #templateForm="ngForm" (ngSubmit)="getTemplateFormData(templateForm)">
+        <div class="mb-3">
+            <label for="exampleInputName" class="form-label">User Name</label>
+            <input type="text" name="name" ngModel placeholder="Enter Name" class="form-control" id="exampleInputName"
+                #name="ngModel" required>
+            <div *ngIf="name.invalid && name.touched">
+                <small *ngIf="name.errors?.['required']">Username is required.</small>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail" class="form-label">Email address</label>
+            <input type="email" name="email" #email="ngModel" ngModel placeholder="Enter Email" class="form-control"
+                id="exampleInputEmail" required email>
+            <div *ngIf="email.invalid && email.touched">
+                <small *ngIf="email.errors?.['required']">This field is required.</small>
+                <small *ngIf="email.errors?.['email']">It should contain email pattern.</small>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword" class="form-label">Password</label>
+            <input type="password" name="password" #password="ngModel" ngModel placeholder="Enter Password"
+                class="form-control" id="exampleInputPassword" required minlength="6" maxlength="10" pattern="^[A-Za-z]+$">
+            <div *ngIf="password.invalid && password.touched">
+                <small *ngIf="password.errors?.['required']">Password is required.</small>
+                <small *ngIf="password.errors?.['minlength']">Password contain atleast 6 Characters.</small>
+                <small *ngIf="password.errors?.['pattern']">
+                    Password must contain uppercase letter and lowercase letters.
+                </small>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="templateForm.invalid">Submit</button>
+    </form>
+</div>

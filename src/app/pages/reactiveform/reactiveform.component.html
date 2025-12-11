@@ -1,0 +1,67 @@
+<div class="container m-5">
+    <h1 style="text-align: center;"> Model Driven/Reactive Form</h1>
+    <form [formGroup]="myReactiveForm" (ngSubmit)="getTemplateFormData()">
+        <div class="mb-3">
+            <label for="exampleInputName" class="form-label">User Name</label>
+            <input type="text" name="name" placeholder="Enter Name" class="form-control" formControlName="name"
+                id="exampleInputName">
+            <small *ngIf="!myReactiveForm.get('name')?.valid && myReactiveForm.get('name')?.touched"
+                class="text-danger">Please enter name
+            </small>
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleInputEmail" class="form-label">Email address</label>
+            <input type="email" name="email" placeholder="Enter Email" class="form-control" formControlName="email"
+                id="exampleInputEmail">
+            <small class="text-danger"
+                *ngIf="!myReactiveForm.get('email')?.valid && myReactiveForm.get('email')?.touched">Please Enter Valid
+                Email</small>
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleInputCountry" class="form-label">Country</label>
+            <select class="form-select" aria-label="Default select example" formControlName="country"
+                id="exampleInputCountry">
+                <option value="1">India</option>
+                <option value="2">USA</option>
+                <option value="3">UK</option>
+            </select>
+
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleInputPassword" class="form-label">Password</label>
+            <input type="password" name="password" placeholder="Enter Password" class="form-control"
+                formControlName="password" id="exampleInputPassword">
+            <small
+                *ngIf="!myReactiveForm.get('password')?.valid && myReactiveForm.get('password')?.touched && myReactiveForm.get('password')?.errors?.['required']"
+                class="text-danger">Password is required.
+            </small>
+            <small
+                *ngIf="!myReactiveForm.get('password')?.valid && myReactiveForm.get('password')?.errors?.['minlength']"
+                class="text-danger">Password must be at least 6 characters
+            </small>
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="!myReactiveForm.valid">Submit</button>
+    </form>
+</div>
+
+
+
+<!-- <div class="container m-5">
+    <h1 style="text-align: center;"> Model Driven/Reactive Form</h1>
+    <form [formGroup]="myForm" (ngSubmit)="getTemplateFormData()">
+        <div class="mb-3">
+            <label for="exampleInputName" class="form-label">User Name</label>
+            <input type="text" name="name" placeholder="Enter Name" class="form-control" formControlName="name"
+                id="exampleInputName">
+
+                 <div *ngIf="myForm.controls.name.touched && myForm.controls.name.errors?.['required']">
+    Name is required
+  </div>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="!myForm.valid">Submit</button>
+    </form>
+</div> -->
