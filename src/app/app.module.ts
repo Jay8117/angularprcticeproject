@@ -14,6 +14,7 @@ import { CustPipeComponent } from './pages/cust-pipe/cust-pipe.component';
 import { CurencyPipe } from './pipes/curency.pipe';
 import { CustDirective } from './directives/cust.directive';
 import { CustDirectiveComponent } from './pages/cust-directive/cust-directive.component';
+import { OnlyNumberDirective } from './directives/only-number.directive';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { CustDirectiveComponent } from './pages/cust-directive/cust-directive.co
     CustPipeComponent,
     CurencyPipe,
     CustDirective,
-    CustDirectiveComponent
+    CustDirectiveComponent,
+    OnlyNumberDirective
   ],
   imports: [
     BrowserModule,

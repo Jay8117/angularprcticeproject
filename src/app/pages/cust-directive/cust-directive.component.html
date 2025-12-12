@@ -2,6 +2,7 @@
     <h1 style="text-align: center; color: rgb(9, 59, 103);">Custome Directives</h1>
 
     <div class="item">
+        <h4>Display boxes red on invalid data</h4>
         <form [formGroup]="myForm" (ngSubmit)="Submit()">
             <label for="">Name</label><br>
             <input type="text" formControlName="name" appCust>
@@ -15,5 +16,12 @@
             <button type="submit" [disabled]="myForm.invalid">Submit</button>
         </form>
         
+    </div>
+
+    <div class="item">
+        <h4>Only Numbers Input Directive</h4>
+        <h5>Prevents the user from entering anything except digits.</h5>
+        <label>Enter Your Phone Number</label><br>
+        <input type="text" appOnlyNumber placeholder="Enter only digits" />
     </div>
 </div>
