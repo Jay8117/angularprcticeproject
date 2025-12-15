@@ -1,0 +1,19 @@
+<div class="container">
+    <h1 style="text-align: center; color: rgb(9, 59, 103);">Dynamically Add Inputs</h1>
+
+    <div class="item">
+        <form [formGroup]="myForm" (ngSubmit)="submit()">
+            <div formArrayName="skills">
+                <div *ngFor="let skill of skills.controls ; let i = index" [formGroupName]="i">
+                    <input type="text" formControlName="skill" placeholder="Enter Skills">
+                    <button class="removeBtn" type="button" (click)="removeSkill(i)">Remove</button>
+                </div>
+            </div>
+            <br>
+            <button class="btn btn-primary" type="button" (click)="addSkill()">Add Skill</button>
+            <br><br>
+            <button type="submit" [disabled]="myForm.invalid">Submit</button>
+        </form>
+
+    </div>
+</div>

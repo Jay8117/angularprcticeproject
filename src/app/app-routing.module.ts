@@ -5,6 +5,7 @@ import { TemplateformComponent } from './pages/templateform/templateform.compone
 import { ReactiveformComponent } from './pages/reactiveform/reactiveform.component';
 import { CustPipeComponent } from './pages/cust-pipe/cust-pipe.component';
 import { CustDirectiveComponent } from './pages/cust-directive/cust-directive.component';
+import { DynamicInputComponent } from './pages/dynamic-input/dynamic-input.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path:'reactive',component:ReactiveformComponent},
   {path:'cust-pipe',component:CustPipeComponent},
   {path:'cust-dir',component:CustDirectiveComponent},
+  {path:'dynamic-inputs',component:DynamicInputComponent},
 ];
 
 @NgModule({
