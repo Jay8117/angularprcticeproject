@@ -15,6 +15,7 @@ import { CurencyPipe } from './pipes/curency.pipe';
 import { CustDirective } from './directives/cust.directive';
 import { CustDirectiveComponent } from './pages/cust-directive/cust-directive.component';
 import { OnlyNumberDirective } from './directives/only-number.directive';
+import { DynamicInputComponent } from './pages/dynamic-input/dynamic-input.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { OnlyNumberDirective } from './directives/only-number.directive';
     CurencyPipe,
     CustDirective,
     CustDirectiveComponent,
-    OnlyNumberDirective
+    OnlyNumberDirective,
+    DynamicInputComponent
   ],
   imports: [
     BrowserModule,
